@@ -1,0 +1,5 @@
+#!/bin/bash
+
+SCRIPT_DIR=$( cd -- "$( dirname -- "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )
+
+grep " $2" "$SCRIPT_DIR"/"$1" | awk -F ' ' '{print $1}'
