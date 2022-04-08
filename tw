@@ -2,4 +2,11 @@
 
 SCRIPT_DIR=$( cd -- "$( dirname -- "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )
 
-grep " $2" "$SCRIPT_DIR"/"$1" | awk -F ' ' '{print $1}'
+CLASS=$(grep " $2" "$SCRIPT_DIR"/"$1" | awk -F ' ' '{print $1}')
+
+if [[ -n "$CLASS" ]]; then
+  printf "$CLASS"
+  exit
+else
+  grep "^$2" "$SCRIPT_DIR"/"$1"
+fi
