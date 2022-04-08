@@ -41,3 +41,4 @@ text-sm font-size: 0.875rem; /* 14px */
 
 - grep
 - awk
+- head
