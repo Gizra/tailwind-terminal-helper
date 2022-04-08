@@ -2,7 +2,7 @@
 
 SCRIPT_DIR=$( cd -- "$( dirname -- "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )
 
-if [[ "$2" == *px* || "$2" == *rem*  ]]; then
+if [[ "$2" == *px* || "$2" == *rem* || "$2" == *%* ]]; then
   grep " $2" "$SCRIPT_DIR"/"$1" | awk -F ' ' '{print $1}'
 else
   grep -h "^$1" "$SCRIPT_DIR"/* --exclude=tw
